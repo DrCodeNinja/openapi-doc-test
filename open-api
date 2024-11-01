@@ -1,0 +1,1319 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "SmartCOOP.IB.API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v{version}/accounts/getcustomeraccounts": {
+            "post": {
+                "tags": [
+                    "Accounts"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerAccountsRequestModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerAccountsRequestModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerAccountsRequestModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerDetailDTOPagedResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerDetailDTOPagedResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerDetailDTOPagedResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v{version}/accounts/getaccounttransactions": {
+            "post": {
+                "tags": [
+                    "Accounts"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetAccountTransactionsRequestModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetAccountTransactionsRequestModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetAccountTransactionsRequestModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerTransactionDTOPagedResult"
+                                }
+                            },
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerTransactionDTOPagedResult"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LedgerTransactionDTOPagedResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v{version}/billpayments/allbillers": {
+            "post": {
+                "tags": [
+                    "BillPayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/billpayments/allbillcategories": {
+            "post": {
+                "tags": [
+                    "BillPayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/billpayments/allrealoadbillers": {
+            "post": {
+                "tags": [
+                    "BillPayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/billpayments/billcategories": {
+            "post": {
+                "tags": [
+                    "BillPayment"
+                ],
+                "parameters": [
+                    {
+                        "name": "categoryId",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/customers/getcustomerinfo": {
+            "post": {
+                "tags": [
+                    "Customers"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerRequestModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerRequestModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerRequestModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/fundtransfer/get-ft-own-accounts": {
+            "post": {
+                "tags": [
+                    "FundTransfer"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerIdRequestModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerIdRequestModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CustomerIdRequestModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/fundtransfer/do-own-fund-transfer": {
+            "post": {
+                "tags": [
+                    "FundTransfer"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OwnFundTransferRequestModel"
+                            }
+                        },
+                        "text/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OwnFundTransferRequestModel"
+                            }
+                        },
+                        "application/*+json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/OwnFundTransferRequestModel"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v{version}/fundtransfer/get-ceft-banks": {
+            "post": {
+                "tags": [
+                    "FundTransfer"
+                ],
+                "parameters": [
+                    {
+                        "name": "version",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CustomerIdRequestModel": {
+                "required": [
+                    "customerId"
+                ],
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GetAccountTransactionsRequestModel": {
+                "required": [
+                    "accountNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GetCustomerAccountsRequestModel": {
+                "required": [
+                    "accountType",
+                    "customerId"
+                ],
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "GetCustomerRequestModel": {
+                "required": [
+                    "customerId"
+                ],
+                "type": "object",
+                "properties": {
+                    "customerId": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LedgerDetailDTO": {
+                "required": [
+                    "accountNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ledgerID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanApplicationNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "interestAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "penaltyOrReservationAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fundReservationPolicy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fundAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fundAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "stationaryCharge": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "depriciationAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "debitAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "creditAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "accountBalance": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "issuedLoanAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "minimumAccountBalance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "lowestAccountBalance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loanInstallment": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "holdFDAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "holdAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "holdDescription": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "period": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "openDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "dueDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "accountLastTransactionDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loanStartDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loanFreeTime": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "interestPolicy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "interestRate": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "interestAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "dueInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "reservedInterest": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "penaltyInterestPolicy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "paidFDInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "payableFDInterestAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "penaltyRate": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "penaltyInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "depriciationPolicy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "depriciationRate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "requestedLoanAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "approvedLoanAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "dailyCapitalAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dailyInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dailyCollectionTotal": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "jointAccountHolder1": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "jointAccountHolder2": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "jointAccountHolder3": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanGuarantee1": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanGuarantee2": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanGuarantee3": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanGuarantee4": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isDailyLoan": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanAccountType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "passdueType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "passdueInstallments": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "passdueAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "overdueInstallment": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "overdueAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pastDuedays": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fdUpdateOptionID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "active": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanApprovalStatus": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanApprovedDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "loanApprovedBy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanRecoverACNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "selectedDayAccountBalance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "passBookType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "printedRecordNo": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "pageNo": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "issuedFDAdvanceLoanNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pawn_MarketValue": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pawn_EstimatedAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pawn_PaymentAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pawn_Reason": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pawn_ItemTotalWeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "pawn_ItemGoldWeight": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "printingLanguage": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "isMortgageLoan": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deedNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "deedRegisteredDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "contractNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "mortgageAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loanReasonID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "rJ_Old_Acc_No": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "noteFirst": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "noteSecond": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountOpendOrLoanIssuedBy": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountStatus": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "balance_int": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "issue_cap_int": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ins_int": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "issued_field_officer": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customerID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "memberFee": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "memberFeeLedgerId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "stationaryAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "instituteId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "monthlyDedcutioninterest": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "maxDeductionLimit": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "monthlyDeduction": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "lastMonthLoanInterest": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "fundRate": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "lastInteUpdateDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "dormantStatus": {
+                        "type": "boolean"
+                    },
+                    "fdUplifted": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "accountStatusId": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "insurancePolicy": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "insuranceRate": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "insuranceAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "insuranceAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "duePenaltyInterest": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dueFundAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "otherFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loanApplicationUser": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "receivedDeduction": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "capitalPastdue": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "interestPastdue": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "deedClosedDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "timeCreated": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "collectingInstallment": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "loanPaymentStartDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "fd_beneficiary": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fd_beneficiarysi": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fd_beneficiary_nic": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fd_beneficiary_relation": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fd_beneficiary_relation_si": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "dormantGlTransferred": {
+                        "type": "boolean"
+                    },
+                    "dormantAccountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "loanApplicationDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "fdTransferAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "fdLoanRecoverOptionId": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountOperatingModeId": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "accountOperatingRemark": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LedgerDetailDTOPagedResult": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LedgerDetailDTO"
+                        },
+                        "nullable": true
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LedgerTransactionDTO": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "transactionID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "ledgerID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "cashOrBankLedgerID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "accountNumber": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customerID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customerName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customerAddress": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sCustomerName": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sCustomerAddress": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "transactionDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "debitAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "creditAmount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "accountBalance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "interestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dueInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "penaltyInterestAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "fundAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "otherFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dueOtherFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "chequeNo": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "chequeDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "transactionType": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "transactionLog": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "userID": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "transactionValidate": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "printStatus": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "transactionRelatedBranch": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "cashOrCurrentAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "cashTenderd": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "cashBalance": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "isTransactionUndone": {
+                        "type": "boolean",
+                        "nullable": true
+                    },
+                    "transactionTime": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pageNo": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "transactionNo": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "prntDescription": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sDescription": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "approvalRequestId": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "duePenaltyInterest": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dueFundAmount": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "dueStationaryFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "insuranceFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    },
+                    "stationaryFee": {
+                        "type": "number",
+                        "format": "double",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "LedgerTransactionDTOPagedResult": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LedgerTransactionDTO"
+                        },
+                        "nullable": true
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "OwnFundTransferRequestModel": {
+                "required": [
+                    "amount",
+                    "customerId",
+                    "destinationAccount",
+                    "sourceAccount"
+                ],
+                "type": "object",
+                "properties": {
+                    "sourceAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "destinationAccount": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "amount": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "remarks": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "customerId": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    }
+}
